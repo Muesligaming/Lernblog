@@ -1,6 +1,6 @@
 object GoL: TFGUIForm
-  Left = 2739
-  Top = 799
+  Left = 1419
+  Top = 384
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'GoL'
   ClientHeight = 581

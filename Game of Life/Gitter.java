@@ -82,7 +82,9 @@ public class Gitter {
       int xKoordinate= i+x;
       for (int y =-1; y<=1 ;y++) {
         int yKoordinate= j+y;
-        if (zustand[xKoordinate][yKoordinate] == 1) {
+        if (x==0 & y == 0) {
+          
+        } else if (zustand[xKoordinate][yKoordinate] == 1) {
           anzahlLebenderInt++;
         } // end of if
       } // end of for
