@@ -51,7 +51,7 @@ public class Rekursivefolgen {
   return fibRek(pN-1)+fibRek(pN-2);       //Wenn die Basis nich erfüllt ist geht es zum nächsten Rekursionsschritt
   }
   
-  public static long[] fibIter( int pN){ //Methode wird 
+  public static long[] fibIter( int pN){ 
     long[] fibonasci = new long[pN+1];
     fibonasci[0]=(long)0;
     fibonasci[1]=(long)1;
