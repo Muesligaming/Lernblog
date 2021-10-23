@@ -128,16 +128,15 @@ public class RekursiveAlgorithmen {
   }
 
   public void Mergesort() {
-    Mergesort(0, zahlen.length);
+    Mergesort(0, zahlen.length-1);
   }
-
+  
   private void Mergesort(int Pl, int Pr) {
     if (Pl < Pr) {
       int mitte = (Pl + Pr) / 2;
-      Mergesort(Pl, mitte);
-      Mergesort(mitte + 1, Pr);
-      merge(Pl, Pr);
-
+      Mergesort(Pl, mitte);  
+      Mergesort(mitte+1, Pr);
+      merge(Pl,Pr); 
       return;
     } // end of if
 
