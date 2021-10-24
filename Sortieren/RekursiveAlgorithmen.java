@@ -145,14 +145,15 @@ public class RekursiveAlgorithmen {
 
   private void merge(int pLow, int pHigh) {
     int center = (pLow + pHigh) / 2;
-    int[] tempA = new int[(center + 1) - pLow];
+    int[] tempA = new int[(center +1) - pLow];
     int temp = 0;
 
     for (int index = pLow; index <= center; index++) {
       tempA[temp] = zahlen[index];
       temp++;
     } // end of for
-
+       
+    
     int l = pLow;
     int r = center + 1;
     temp = 0;
@@ -219,6 +220,42 @@ public class RekursiveAlgorithmen {
       selectionsortRek(pStartIndex + 1);
     } // end of if-else
   }
+  
+  //quicksort rekursiv
+  
+    public void quicksortRek() {
+    quicksortRek(0, zahlen.length);
+  }
 
+  public void quicksortRek(int links, int rechts) { 
+    if (links>= rechts) {
+      return;
+    } else {
+      int l=links;
+      int r=rechts;
+      int pivot = zahlen[rechts];
+      while (l<r) { 
+        while (l<rechts&& zahlen[l]<pivot) { 
+          l++;
+        } // end of while
+        while (r>links&& zahlen[r]>=pivot) { 
+          r--;
+        } // end of while
+        if (l<r) {
+          int temp =zahlen[l];
+          zahlen[l] =zahlen[r];
+          zahlen[r]= temp;       
+        } // end of if
+      } // end of while
+      if (zahlen[l]>pivot) {
+        int temp =zahlen[l];
+        zahlen[l] =zahlen[rechts];
+        zahlen[rechts]= temp;
+      } // end of if
+      quicksortRek(links, l-1);
+      quicksortRek(l+1, rechts);
+    } // end of if-else
+    return;    
+  }
   // Ende Methoden
 } // end of Suche

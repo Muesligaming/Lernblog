@@ -30,6 +30,7 @@ public class RekursiveAlgorithmenGUI extends JFrame {
   private JButton btnInsertionssort = new JButton();
   private JButton btnBubblesort = new JButton();
   private JButton btnMergesort = new JButton();
+  private JButton btnquicksort = new JButton();
   
 
   // Ende Attribute
@@ -136,6 +137,15 @@ public class RekursiveAlgorithmenGUI extends JFrame {
         }
       });
     cp.add(btnMergesort);
+    btnquicksort.setBounds(160, 376, 145, 33);
+    btnquicksort.setText("Quicksort");
+    btnquicksort.setMargin(new Insets(2, 2, 2, 2));
+    btnquicksort.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent evt) {
+          btnquicksort_ActionPerformed(evt);
+        }
+      });
+    cp.add(btnquicksort);    
     // Ende Komponenten
     setVisible(true);
   } // end of public BinaereSuche
@@ -208,5 +218,14 @@ public class RekursiveAlgorithmenGUI extends JFrame {
     btnSuche.setEnabled(true);
     jnbfZahl.setEnabled(true);    
   } 
+  public void btnquicksort_ActionPerformed(ActionEvent evt) {
+    algo.Mergesort();
+    jtxtAusgabe.setText(algo.arrayAusgeben());
+    lblAusgabe.setText("");
+    jnbfZahl.setInt(0);
+    jlblNBild.setIcon(null);
+    btnSuche.setEnabled(true);
+    jnbfZahl.setEnabled(true);    
+  }   
   // Ende Methoden
 } // end of class BinaereSuche
